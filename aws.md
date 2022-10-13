@@ -1,10 +1,10 @@
 # Serving static content: AWS Edition
 
-**-TLDR-** This blog explains how to store static content in the cloud in a secure manner and how to access it through your own domain! 
+<span style="color:pink">**-TLDR-**</span> This blog explains how to store static content in the cloud in a secure manner and how to access it through your own domain! 
 
 You ever wanted to store pictures of cat hats in the cloud but never had the time to figure out how? In a few easy steps we will explain how! In this tutorial we will explain how to store static content in AWS S3 Buckets, how to handle the permissions, how to make the files __*BLAZINGLY*__ fast to load and how to use your own domain to access them!
 
-1. **S3 - Cloud Storage**
+1. <span style="color:pink">**S3 - Cloud Storage**</span>
 2. CloudFront - Serve S3 content from cached edge locations 
 3. Route53 - Use your own domain
 4. Certificate Manager - Seal of approval
@@ -19,6 +19,10 @@ What does this mean for us? It means we found the perfect place to store our pic
 2. Create new bucket by clicking on the Create Bucket orange button - keep the recommended settings including block from public access. Try to give it a meaningful name. Once created you should see it in the bucket list.
 3. (Optional) Upload some sample pictures by clicking on the Upload button
 
-Great progress! We now are ready to store infinite amount of cat hat pictures! Let's now make them accessible through AWS Cloudfront so we have the 
+Great progress! We now are ready to store infinite amount of cat hat pictures! Let's now make them accessible through AWS Cloudfront so we can access them __*BLAZINGLY*__ fast. 
 
+1. S3 - Cloud Storage
+2. <span style="color:pink">**CloudFront - Serve S3 content from cached edge locations</span>**
+3. Route53 - Use your own domain
+4. Certificate Manager - Seal of approval
 
