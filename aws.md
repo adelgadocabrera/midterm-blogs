@@ -1,10 +1,12 @@
 # Serving static content: AWS Edition
 
-<span style="color:pink">**-TLDR-**</span> This blog explains how to store static content in the cloud in a secure manner and how to access it through your own domain! 
+## <span style="color:pink">**-TLDR-**</span> 
+This blog explains how to store static content in the cloud in a secure manner and how to access it __*BLAZINGLY*__ fast through your own domain! 
 
+## Intro
 You ever wanted to store pictures of cat hats in the cloud but never had the time to figure out how? We will cover it in a few easy steps! In this tutorial we will explain how to store static content in AWS S3 Buckets, how to handle permissions, how to make the files __*BLAZINGLY*__ fast to load and how to use your own domain to access them!
 
-This will be our architecture:
+This is the architecture for today's blog:
 
 ![aws-architecture](assets/aws-architecture.png "AWS-Architecture")
 
