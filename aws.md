@@ -48,9 +48,6 @@ What does this mean for us? It means we found the perfect place to store our pic
 ```
 Click on `Save changes`.
 
-
-Great progress! We are now ready to store infinite amount of cat hat pictures! Let's now make them accessible through AWS Cloudfront, so we can access them __*BLAZINGLY*__ fast. 
-
 ---
 1. S3 - Cloud Storage
 2. <span style="color:pink">**Route53 - Use your own domain</span>**
@@ -82,6 +79,9 @@ Security is of the essence. We don't want those damn hackers stalking over our c
 4. Select `Request`
 5. You should see the certificate in `Pending validation` status. Click on the `Certificate ID`
 6. Select `Create records in Route 53` under domains and then again `Create records`
+
+
+Great progress! We are now ready to store safely infinite amount of cat hat pictures! Let's now make them accessible through AWS Cloudfront, so we can access them __*BLAZINGLY*__ fast. 
 
 ---
 1. S3 - Cloud Storage
