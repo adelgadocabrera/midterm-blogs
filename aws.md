@@ -59,7 +59,8 @@ So far we know where are content is but... what about our dearest friends and fa
 1. Go to `Services` - top left corner - and click on `Route53`
 2. Click on `Created hosted zone`
 3. In domain name insert the name of your domain
-4. Click on `Create hosted zone`
+4. Click on `Create hosted zone`. You should get something similar to this:
+![Hosted zone](assets/hosted-zone.png "Hosted-zone-example")
 5. Under records, in the `Value/Route traffic to` column are the nameservers. These are the ones in charge of translating domain names into IP addresses.
 6. If you used Freenom, you can follow the linked video to add these nameservers to your domain management system. If you are using a different service, you'll have to figure out how to add these nameservers.
 
@@ -96,6 +97,33 @@ We sure want our pictures to be shared worldwide, but we also want them to be de
 3. Under `Origin Domain Name` select the bucket you created previously - you should see it in the dropdown box
 4. Under `Default Cache Behavior` you can select `Redirect HTTP to HTTPS`
 5. (Optional) Set `Restrict Viewer Access` to yes to ensure the images are only access through CloudFront.
+6. For `Alternate domain name (CNAME)` insert your domain name, for example `your-domain.com`
+7. And for `Custom SSL certificate` select the previously created certificate
+
+Voila! We now have a super fast and secure infrastructure serving our static content!
 
 ![cloudfront](assets/cloudfront.png "AWS CloudFront")
 
+---
+1. S3 - Cloud Storage
+2. <span style="color:pink">**Route53 - Use your own domain</span>**
+3. Certificate Manager - Seal of approval
+4. CloudFront - Serve S3 content from cached edge locations
+
+## Route53 - Use your own domain - last touch!
+We are almost there!
+
+Now that we have set up CloudFront we want Route53 to target this new service. Otherwise, how are we gonna to access our website?
+
+1. Go to `Services` - top left corner - and select `Route53`
+2. Select your previously created hosted zone
+3. Click on `Create record`. 
+4. Leave `Record type` as `A` record but mark the `Alias` check. It should look something like:
+![New record](assets/route53-record.png "CloudFront record")
+5. Under `Route traffic to` select `Alias to CloudFront distribution` and when clicking on the search box `Choose distribution` you should be able to choose the previously created CloudFront distribution
+6. Select `Create records` and that's it! 
+
+## Done!
+It was a long journey but if you managed to follow all the steps you just hosted your own website, accessible through Route53 for stable routing and load balancing and fast distribution thanks to CloudFront. 
+
+Only steps missing is keep expanding your website and show the world the glory of the cat hats!
