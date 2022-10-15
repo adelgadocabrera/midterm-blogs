@@ -1,7 +1,7 @@
 # Serving static content: AWS Edition
 
 ## <span style="color:pink">**-TLDR-**</span> 
-This blog explains how to store static content in the cloud in a secure manner and how to access it __*BLAZINGLY*__ fast through your own domain! 
+This blog explains how to store static content in the cloud in a secure manner and how to access it __*BLAZINGLY*__ fast through your own domain using Amazon Web Services! We will use S3 for cloud storage, Route53 to access the data through a public domain, Certificate Manager for a secure connection and CloudFront to make it super fast for everyone to consume. 
 
 ## Intro
 You ever wanted to store pictures of cat hats in the cloud but never had the time to figure out how? We will cover it in a few easy steps! In this tutorial we will explain how to store static content in AWS S3 Buckets, how to handle permissions, how to make the files __*BLAZINGLY*__ fast to load and how to use your own domain to access them!
@@ -28,7 +28,7 @@ What does this mean for us? It means we found the perfect place to store our pic
    ![s3](assets/s3.png "AWS S3")
 
 3. Click on your bucket and upload your own `index.html` by selecting the `Upload` button. This can be a very basic `html` for now.
-4. (Optional) Upload some sample pictures by clicking on the `Upload` button. You can also try to keep things a bit tidy by creating first a new folder called `images` and then placing the images there. Up to you!
+4. (Optional) Upload some sample pictures by clicking on the `Upload` button. You can also try to keep things a bit tidy by creating first a new folder called `images` and then placing the images there. Up to you! When you are uploading them, you can add an `img` tag in your `index.html` that points to the generated URL for each image.
 5. Click on properties and scroll to `Static website hosting` > `Edit` > `Enable`. Enter `index.html` for both `Index document` and `Error document - optional`. Click `Save changes`.
 6. You should be back at your bucket overview page. Go to the `Permissions` tab and under `Bucket policy` click on `Edit`. In order to make it publicly accessible we are going to add the following policy:
  ```
@@ -63,7 +63,7 @@ So far we know where are content is but... what about our dearest friends and fa
 3. In domain name insert the name of your domain
 4. Click on `Create hosted zone`. You should get something similar to this:
 ![Hosted zone](assets/hosted-zone.png "Hosted-zone-example")
-5. Under records, in the `Value/Route traffic to` column are the nameservers. These are the ones in charge of translating domain names into IP addresses.
+5. Under records, in the `Value/Route traffic to` column are the nameservers. These are web services in charge of translating domain names into IP addresses.
 6. If you used Freenom, you can follow the linked video to add these nameservers to your domain management system. If you are using a different service, you'll have to figure out how to add these nameservers.
 
 That's it for now. Although Route53 is not yet pointing to our `index.html` in `S3` we will come back to it later. We need security!
